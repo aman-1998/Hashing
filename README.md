@@ -32,9 +32,14 @@ and so on…
 # Double hashing:
 
 Linear probing collision resolution leads to clusters in the table, because if two keys collide, the next position probed will be the same for both of them. 
-The idea of double hashing: Make the offset to the next position probed depend on the key value, so it can be different for different keys
-Need to introduce a second hash function H 2 (K), which is used as the offset in the probe sequence (think of linear probing as double hashing with H 2 (K) == 1)
-For a hash table of size M, H 2 (K) should have values in the range 1 through M-1; if M is prime, one common choice is H2(K) = 1 + ( (K/M) mod (M-1) )
+
+The idea of double hashing: Make the offset to the next position probed depend on the key value, so it can be different for different keys.
+
+Need to introduce a second hash function H 2 (K), which is used as the offset in the probe sequence (think of linear probing as double hashing with H 2 (K) == 1).
+
+For a hash table of size M, H 2 (K) should have values in the range 1 through M-1; if M is prime, one common choice is H2(K) = 1 + ( (K/M) mod (M-1) ).
+
+
 The insert algorithm for double hashing is then:
 
 1. Set indx = H(K); offset = H 2 (K)
