@@ -1,6 +1,6 @@
 # Hashing:
 
-Separate chaining (open hashing):
+# Separate chaining (open hashing):
 
 Separate chaining is one of the most commonly used collision resolution techniques. It is usually implemented using linked lists. In separate chaining, each element of the hash table is a linked list. To store an element in the hash table you must insert it into a specific linked list. If there is any collision (i.e. two different elements have same hash value) then store both the elements in the same linked list.
 
@@ -8,7 +8,7 @@ The cost of a lookup is that of scanning the entries of the selected linked list
 
 For separate chaining, the worst-case scenario is when all the entries are inserted into the same linked list. The lookup procedure may have to scan all its entries, so the worst-case cost is proportional to the number (N) of entries in the table.
 
-Linear probing (open addressing or closed hashing):
+# Linear probing (open addressing or closed hashing):
 
 In open addressing, instead of in linked lists, all entry records are stored in the array itself. When a new entry has to be inserted, the hash index of the hashed value is computed and then the array is examined (starting with the hashed index). If the slot at the hashed index is unoccupied, then the entry record is inserted in slot at the hashed index else it proceeds in some probe sequence until it finds an unoccupied slot.
 
@@ -29,7 +29,7 @@ index = (index + 3) % hashTableSize
 and so on…
 
 
-Double hashing:
+# Double hashing:
 
 Linear probing collision resolution leads to clusters in the table, because if two keys collide, the next position probed will be the same for both of them. 
 The idea of double hashing: Make the offset to the next position probed depend on the key value, so it can be different for different keys
